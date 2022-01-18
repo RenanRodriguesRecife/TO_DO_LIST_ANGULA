@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskListPageComponent } from './tasks/pages/task-list-page/task-list-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskListPageComponent
   ],
   imports: [
     BrowserModule,
