@@ -1,6 +1,6 @@
-export interface ITask{
-    id?: string;
-    title: string;
-    description: string;
-    done: boolean;
+export interface ITask {
+  id?: string; // não é obrigatório
+  title: string;
+  description: string;
+  done: boolean;
 }
