@@ -75,5 +75,9 @@ export class TaskFormPageComponent implements OnInit {
       }else{
         response = await this.createTaskHandler.execute(taskToSave);
       }
+
+      if(response){
+        this.taskId = response.id;
+      }
     }
 }
