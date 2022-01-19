@@ -9,26 +9,26 @@ import { ITask } from '../models/itask';
 export class TaskRepository {
   constructor(private httpClient: HttpClient) {}
 
-  create(task: ITask): Promise<ITask> {
+  create(task: ITask): Promise<ITask | undefined> {
     return this.httpClient
       .post<ITask>(`${environment.api}/tasks`, task)
       .toPromise();
   }
 
-  update(entity: ITask): Promise<ITask> {
+  update(entity: ITask): Promise<ITask | undefined> {
     const { id, ...data } = entity;
     return this.httpClient
       .put<ITask>(`${environment.api}/tasks/${id}`, data)
       .toPromise();
   }
 
-  getById(id: string): Promise<ITask> {
+  getById(id: string): Promise<ITask | undefined> {
     return this.httpClient
       .get<ITask>(`${environment.api}/tasks/${id}`)
       .toPromise();
   }
 
-  getAll(): Promise<ITask[]> {
+  getAll(): Promise<ITask[] | undefined>{
     return this.httpClient
       .get<ITask[]>(`${environment.api}/tasks/`)
       .toPromise();
@@ -39,4 +39,3 @@ export class TaskRepository {
     return;
   }
 }
-
